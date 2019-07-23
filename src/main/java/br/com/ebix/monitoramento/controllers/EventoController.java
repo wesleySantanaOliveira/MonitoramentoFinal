@@ -100,8 +100,7 @@ public class EventoController {
 		
 		for (int i = 0; i < eventos.size(); i++) {
 			Evento ev = eventos.get(i);
-			Date date = new Date();
-				
+			Date date = new Date();				
 			evento.setNmStatus(eventoService.getStatus(ev.getUrl()));
 			evento.setUrl(ev.getUrl());
 			evento.setNmEvento(ev.getNmEvento());

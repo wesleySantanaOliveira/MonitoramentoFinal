@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
-  $("#myInput").on("keyup", function() {
+  $("#validar").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#dtEventos tr").filter(function() {
+    $("#spinner tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });

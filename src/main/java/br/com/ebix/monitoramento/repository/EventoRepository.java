@@ -15,7 +15,7 @@ public interface EventoRepository  extends JpaRepository<Evento, Long> {
 	@Query("select e from Evento e where e.nmEmail=:nmEmail")
 	public Evento buscarPorEmail(@Param("nmEmail") String nmEmail);
 	
-	@Query("select e from Evento e")
+	@Query("select e from Evento e ORDER BY e.id DESC")
 	public List<Evento> buscarTodos(); 
 	
 	@Query("select e from Evento e where e.id=:id")
