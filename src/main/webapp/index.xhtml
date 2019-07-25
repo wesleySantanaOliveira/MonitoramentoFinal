@@ -12,7 +12,7 @@
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 		crossorigin="anonymous" />
-
+			
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous">
@@ -30,6 +30,7 @@
 
 	<script src="static/js/filter2.js"></script>
 	<script src="static/js/buttun.js"></script>
+	
 
 </h:head>
 
@@ -42,16 +43,11 @@
 		<div class="Small shadow p-3 mb-5 bg-light rounded">
 			<nav class="navbar navbar-light bg-light "> <img
 				src="/imagem/ebix.jpg" class="rounded-circle" alt="Cinque Terre" />
-			<p class="text-primary text-center text-wrap h2">Monitoramente de
-				URl's</p>
-			<!-- <h1 class="navbar-brand text-primary h2">Monitoramente de URl</h1> -->
+			<p class="text-primary text-center text-wrap h2">Monitoramente de URl's</p>
+			
 			<form class="form-inline">
 				<button class="btn btn-outline-danger my-2 my-sm-0" type="submit"
-					style="margin-right: 20px;"
-					onclick="return window.confirm('Deseja Atualizar?')">Atualizar</button>
-					
-					
-					
+					style="margin-right: 20px;"	onclick="return window.confirm('Deseja Atualizar?')">Atualizar</button>
 			</form>
 			</nav>
 		</div>
@@ -60,11 +56,8 @@
 	<!-- FECHA O NAVBAR DO SISTEMA -->
 
 	<h:form id="frmEvento">
-		<!-- COLLAPSING -->
 		<div class="container">
-
 			<!-- COLOQUE AQUI O FORM DE CADASTRO -->
-
 			<div class="shadow-lg p-3 mb-5 bg-white rounded">
 				<div class="shadow-none p-3 mb-5 bg-light rounded">
 					<p class="text-success text-center text-wrap h3">Cadastro de
@@ -72,7 +65,6 @@
 				</div>
 
 				<p:messages id="msgs" />
-
 
 				<div class="form-group ">
 					<div class="input-group-prepend">
@@ -122,11 +114,9 @@
 					</div>
 					<h:panelGrid columns="1" style="margin-bottom:15px" cellpadding="5">
 
-						<p:selectOneRadio id="console" layout="pageDirection"
-							value="#{eventoController.evento.tipo}"
-							style="vertical-align: middle;" unselectable="true"
-							required="true" requiredMessage="Tipo é obrigátorio">
-							<f:selectItem itemValue="PROD" itemLabel="Producao" />
+						<p:selectOneRadio id="console" layout="pageDirection" value="#{eventoController.evento.tipo}"
+							style="vertical-align: middle;" unselectable="true"  required="true" requiredMessage="Tipo é obrigátorio">
+							<f:selectItem itemValue="PROD" itemLabel="Producao"/>
 							<f:selectItem itemValue="DEV" itemLabel="Desenvolvimento" />
 						</p:selectOneRadio>
 
@@ -156,23 +146,21 @@
 			<div class="shadow p-3 mb-5 bg-white rounded">
 
 				<div class="shadow-none p-3 mb-5 bg-light rounded">
-					<p class="text-success text-center text-wrap h3">Lista de
-						Eventos</p>
+					<p class="text-success text-center text-wrap h3">Lista de Eventos</p>
 				</div>
 
-				<h:commandButton action="#{eventoController.listar()}"
-					class="btn btn-primary mb-2 " value="Validar Tudo"
+				<h:commandButton action="#{eventoController.listar()}" class="btn btn-primary mb-2 " value="Validar Tudo"
 					style="margin-right:20px;" update="dtEventos" id="btn-one">
 					<f:ajax render="frmEvento:dtEventos" />
 				</h:commandButton>
+		
+				
+			<!-- 	<div class="spinner-border text-primary" role="status">
+					<span class="sr-only" onclick="btn-one">Loading...</span>
+				</div>  -->
 
-				<!-- <div class="spinner-border text-primary" role="status">
-					<span class="sr-only">Loading...</span>
-				</div> -->
 
-
-				<h:dataTable value="#{eventoController.eventos}" var="ev"
-					class="table" id="dtEventos">
+				<h:dataTable value="#{eventoController.eventos}" var="ev" class="table" id="dtEventos">
 
 					<h:column headerClass="center">
 						<f:facet name="header">ID</f:facet>
