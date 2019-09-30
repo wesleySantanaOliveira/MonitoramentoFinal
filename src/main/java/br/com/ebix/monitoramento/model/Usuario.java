@@ -11,6 +11,8 @@ public class Usuario {
 	@Id 
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long idUser;
+	
+	private String nmUsuario;
 		
 	private String email;
 	
@@ -18,12 +20,7 @@ public class Usuario {
 	
 	private String tipoUser;
 
-	public Long getIdUser() {
-		return idUser;
-	}
-
 	//CONSTRUTER
-	
 	public Usuario() {
 		super();
 	}
@@ -36,6 +33,10 @@ public class Usuario {
 	}
 	
 	//GET E SET
+	public Long getIdUser() {
+		return idUser;
+	}
+	
 	public void setIdUser(Long idUser) {
 		this.idUser = idUser;
 	}
@@ -64,13 +65,20 @@ public class Usuario {
 	public void setTipoUser(String tipoUser) {
 		this.tipoUser = tipoUser;
 	}
-
 	
+		
+	public String getNmUsuario() {
+		return nmUsuario;
+	}
+
+	public void setNmUsuario(String nmUsuario) {
+		this.nmUsuario = nmUsuario;
+	}
+
 	//TO - STRING 
 	@Override
 	public String toString() {
-		return "Usuario [idUser=" + idUser + ", email=" + email + ", pass=" + pass + ", tipoUser=" + tipoUser + "]";
+		return "Usuario [idUser=" + idUser + ", nmUsuario=" + nmUsuario + ", email=" + email + ", pass=" + pass
+				+ ", tipoUser=" + tipoUser + "]";
 	}
-	
-	
 }

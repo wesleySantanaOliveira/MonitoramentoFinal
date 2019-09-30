@@ -7,7 +7,7 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:head>
-	<title>Monitoramento</title>
+	<title>Sistema Homologacao</title>
 	<link rel="stylesheet"
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -41,8 +41,8 @@
 
 	<div class="container">
 		<div class="Small shadow p-3 mb-5 bg-light rounded">
-			<nav class="navbar navbar-light bg-light "> <img
-				src="/imagem/ebix.jpg" class="rounded-circle" alt="Cinque Terre" />
+			<nav class="navbar navbar-light bg-light "> 
+			<!-- <img src="/imagem/ebix.jpg" class="rounded-circle" alt="Cinque Terre" /> -->
 			<p class="text-primary text-center text-wrap h2">Monitoramente de URl's</p>
 			
 			<form class="form-inline">
@@ -60,8 +60,7 @@
 			<!-- COLOQUE AQUI O FORM DE CADASTRO -->
 			<div class="shadow-lg p-3 mb-5 bg-white rounded">
 				<div class="shadow-none p-3 mb-5 bg-light rounded">
-					<p class="text-success text-center text-wrap h3">Cadastro de
-						Evento</p>
+					<p class="text-success text-center text-wrap h3">Cadastro de Evento</p>
 				</div>
 
 				<p:messages id="msgs" />
@@ -71,11 +70,9 @@
 						<span class="input-group-text" id="basic-addon3">Evento:</span>
 					</div>
 
-					<h:inputText value="#{eventoController.evento.nmEvento}"
-						id="firstrEvento" class="form-control " type="email"
-						required="true" requiredMessage="Evento é obrigátorio">
-						<f:passThroughAttribute name="placeholder"
-							value="Alarme - Nome do Alarme" />
+					<h:inputText value="#{eventoController.evento.nmEvento}" id="firstrEvento" class="form-control " type="email" required="true" 
+								requiredMessage="Evento é obrigátorio">
+						<f:passThroughAttribute name="placeholder" value="Alarme - Nome do Alarme" />
 					</h:inputText>
 					<p:message for="firstrEvento" display="icon" />
 				</div>
@@ -85,11 +82,9 @@
 						<span class="input-group-text" id="basic-addon3">URL:</span>
 					</div>
 
-					<h:inputText value="#{eventoController.evento.url}" id="firstrUrl"
-						class="form-control" type="email" required="true"
-						requiredMessage="URL é obrigátorio">
-						<f:passThroughAttribute name="placeholder"
-							value="https://exemplo.com" />
+					<h:inputText value="#{eventoController.evento.url}" id="firstrUrl" class="form-control"
+						 type="email" required="true" requiredMessage="URL é obrigátorio">
+						<f:passThroughAttribute name="placeholder" value="https://exemplo.com" />
 					</h:inputText>
 					<p:message for="firstrUrl" display="icon" />
 				</div>
@@ -122,11 +117,11 @@
 
 					</h:panelGrid>
 				</div>
-
+				<!-- BOTAO SALVAR -->
 				<h:commandButton action="#{eventoController.salvar}"
 					class="btn btn-primary mb-2" id="slCad" value="Salvar"
 					icon="pi pi-save">
-					<f:ajax render="frmEvento" execute="frmEvento" />
+					<f:ajax render="frmEvento" execute="frmEvento"/>
 				</h:commandButton>
 
 				<h:commandButton rendered="#{eventoController.modoEdicao}"
@@ -134,9 +129,7 @@
 					value="Cancelar" style="margin-right:20px;">
 					<f:ajax render="frmEvento" />
 				</h:commandButton>
-
 			</div>
-
 		</div>
 
 
