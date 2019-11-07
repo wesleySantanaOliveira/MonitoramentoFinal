@@ -11,7 +11,6 @@ import br.com.ebix.monitoramento.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-
 	
 	  @Query("select u from Usuario u where u.email=:email") public Usuario
 	  buscarPorEmail(@Param("email") String email);

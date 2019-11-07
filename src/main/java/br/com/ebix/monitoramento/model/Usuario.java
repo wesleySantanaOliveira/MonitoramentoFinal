@@ -12,7 +12,7 @@ public class Usuario {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long idUser;
 	
-	private String nmUsuario;
+	private String usuario;
 		
 	private String email;
 	
@@ -67,18 +67,18 @@ public class Usuario {
 	}
 	
 		
-	public String getNmUsuario() {
-		return nmUsuario;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setNmUsuario(String nmUsuario) {
-		this.nmUsuario = nmUsuario;
+	public void setNmUsuario(String Usuario) {
+		this.usuario = usuario;
 	}
 
 	//TO - STRING 
 	@Override
 	public String toString() {
-		return "Usuario [idUser=" + idUser + ", nmUsuario=" + nmUsuario + ", email=" + email + ", pass=" + pass
+		return "Usuario [idUser=" + idUser + ", Usuario=" + usuario + ", email=" + email + ", pass=" + pass
 				+ ", tipoUser=" + tipoUser + "]";
 	}
 }
